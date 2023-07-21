@@ -1,0 +1,30 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">{{ title }}</h1>
+        <p class="lead">Store_flowers - это отличный магазин цветов</p>
+    </div>
+
+    <div class="container">
+        <div class="row text-center">
+            {% for object in object_list %}
+                <div class="col-3">
+                    <div class="card mb-4 box-shadow h-100 d-inline-block">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">{{ object.name | title }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title pricing-card-title">{{ object.price }} руб.</h2>
+                            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+
+
+                            </ul>
+                            <a class="p-2 btn btn-outline-primary" href="{% url 'catalog:product_card/object.pk' %}">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+{% endblock %}

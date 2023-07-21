@@ -1,0 +1,13 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+<li>- {{ object.category }}</li>
+<li>- {{ object.date_of_creation }}</li>
+<li>- {{ object.last_modified_date }}</li>
+<li>
+    <img class="img-fluid rounded mx-auto d-block" src="{{ object.Imag | my_media }}"
+    ></li>
+
+
+{% endblock %}
